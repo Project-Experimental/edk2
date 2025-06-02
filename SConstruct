@@ -32,13 +32,13 @@ cmd = [
 # build_command
 
 build_edk = Command(
-    'BaseToolsBuilt.log',
+    'BuildEDK.log',
     [],
     [
         " && ".join(cmd)
     ]  
 )
 
-Alias('basetools', base_tools)
-
 Default(build_edk)
+
+Alias('basetools', base_tools)

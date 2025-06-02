@@ -691,3 +691,13 @@
         "$(RC)" $(RC_FLAGS) $(OUTPUT_DIR)(+)$(MODULE_NAME)hii.rc ${dst}
     <Command.XCODE>
         "$(GENFW)" -o $(OUTPUT_DIR)(+)$(MODULE_NAME)hii.rc -g $(MODULE_GUID) --hiibinpackage $(HII_BINARY_PACKAGES) $(GENFW_FLAGS)
+
+[Rust-Code-File]
+    <InputFile>
+        ?.rs
+    <OutputFile>
+        $(OUTPUT_DIR)(+)${s_dir}(+)${s_base}.obj
+    <ExtraDependency>
+        $(MAKE_FILE)
+    <Command.DEFAULT>
+        "$(RUSTC)" $(RUSTC_FLAGS) --emit=obj=${dst} ${src}
