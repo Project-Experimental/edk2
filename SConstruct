@@ -4,6 +4,7 @@ from SCons.Script import Alias, DefaultEnvironment, Command, Default
 ARCH = 'X64'
 TOOLCHAIN = 'GCC5'
 BUILD_TYPE = 'DEBUG'
+PACKAGE = 'OvmfPkg/OvmfPkgX64.dsc'
 
 EDK2_ROOT = Dir('.').abspath
 
@@ -26,7 +27,7 @@ def build_edk2(target, source, env):
 
 cmd = [
     ". %s/edksetup.sh" % EDK2_ROOT,
-    "build -a %s -t %s -b %s" % (ARCH, TOOLCHAIN, BUILD_TYPE)
+    "build -p %s -a %s -t %s -b %s" % (PACKAGE, ARCH, TOOLCHAIN, BUILD_TYPE)
 ]
 # build_command
 
