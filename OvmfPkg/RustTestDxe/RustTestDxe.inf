@@ -1,0 +1,14 @@
+[Defines]
+  INF_VERSION                    = 1.30
+  BASE_NAME                      = RustTestDxe
+  FILE_GUID                      = bd860dca-ad4f-4f8a-9ed4-d32cb02dbec2 
+  MODULE_TYPE                    = UEFI_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = RustTestEntryPoint
+
+[Sources]
+ Test.rs
+
+[Packages]
+  MdePkg/MdePkg.dec
+  OvmfPkg/OvmfPkg.dec

@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from SCons.Script import Alias, DefaultEnvironment, Command, Default
 
 ARCH = 'X64'
@@ -6,11 +7,14 @@ TOOLCHAIN = 'GCC5'
 BUILD_TYPE = 'DEBUG'
 PACKAGE = 'OvmfPkg/OvmfPkgX64.dsc'
 
+HOME = Path.home()
 EDK2_ROOT = Dir('.').abspath
 
 env = DefaultEnvironment(ENV = os.environ)
 
-base_tools = Command(
+env['ENV']['HOME'] = HOME
+
+base_tools = env.Command(
     'BaseToolsBuilt.log',
     [],
     [
@@ -27,11 +31,12 @@ def build_edk2(target, source, env):
 
 cmd = [
     ". %s/edksetup.sh" % EDK2_ROOT,
+    ". %s/.cargo/env" % HOME,
     "build -p %s -a %s -t %s -b %s" % (PACKAGE, ARCH, TOOLCHAIN, BUILD_TYPE)
 ]
 # build_command
 
-build_edk = Command(
+build_edk = env.Command(
     'BuildEDK.log',
     [],
     [

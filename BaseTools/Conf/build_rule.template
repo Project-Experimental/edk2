@@ -700,4 +700,4 @@
     <ExtraDependency>
         $(MAKE_FILE)
     <Command.DEFAULT>
-        "$(RUSTC)" $(RUSTC_FLAGS) --emit=obj=${dst} ${src}
+        "$(RUSTC)" $(RUSTC_FLAGS) --emit=obj ${src} -o ${dst}
