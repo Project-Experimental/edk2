@@ -261,6 +261,8 @@
 !include OvmfPkg/Include/Dsc/ShellLibs.dsc.inc
 !include OvmfPkg/Include/Dsc/OvmfTlsLibs.dsc.inc
 
+  RustSupportLib|MdePkg/Library/RustSupportLib/RustSupportLib.inf
+
 [LibraryClasses.common]
   AmdSvsmLib|OvmfPkg/Library/AmdSvsmLib/AmdSvsmLib.inf
   BaseCryptLib|CryptoPkg/Library/BaseCryptLib/BaseCryptLib.inf
@@ -483,6 +485,9 @@
   DebugLib|OvmfPkg/Library/PlatformDebugLibIoPort/PlatformDebugLibIoPort.inf
 !endif
   PciLib|OvmfPkg/Library/DxePciLibI440FxQ35/DxePciLibI440FxQ35.inf
+
+[LibraryClasses.common.BINDGEN]
+  RustSupportLib|MdePkg/Library/RustSupportLib/RustSupportLib.inf
 
 ################################################################################
 #

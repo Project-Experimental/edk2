@@ -1,0 +1,3 @@
+#string STR_MODULE_ABSTRACT             #language en-US "Support Rust Library"
+
+#string STR_MODULE_DESCRIPTION          #language en-US "Just Rust Support Module"

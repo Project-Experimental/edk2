@@ -1,0 +1,18 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = RustSupportLib
+  MODULE_UNI_FILE                = RustSupportLib.uni
+  FILE_GUID                      = e2495f2c-a4b4-4e69-9a80-d7719e402884
+  MODULE_TYPE                    = BINDGEN
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = RustSupportLib|DXE_CORE DXE_DRIVER DXE_RUNTIME_DRIVER DXE_SMM_DRIVER UEFI_APPLICATION UEFI_DRIVER SMM_CORE
+
+[Sources]
+  bindings.h
+  lib.rs
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiLib
